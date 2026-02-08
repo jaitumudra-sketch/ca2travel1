@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking Successful</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins', sans-serif;
+        }
+
+        body{
+            min-height:100vh;
+            background:linear-gradient(
+                rgba(0,0,0,0.6),
+                rgba(0,0,0,0.6)
+            ),
+            url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
+            background-size:cover;
+            background-position:center;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+        .success-box{
+            background:white;
+            padding:35px;
+            width:380px;
+            border-radius:15px;
+            text-align:center;
+            box-shadow:0 15px 35px rgba(0,0,0,0.3);
+            animation:pop 0.8s ease;
+        }
+
+        @keyframes pop{
+            from{transform:scale(0.8); opacity:0;}
+            to{transform:scale(1); opacity:1;}
+        }
+
+        h2{
+            color:#28a745;
+            margin-bottom:15px;
+        }
+
+        p{
+            color:#555;
+            margin:8px 0;
+            font-size:15px;
+        }
+
+        a{
+            display:inline-block;
+            margin-top:20px;
+            padding:10px 25px;
+            border-radius:25px;
+            background:linear-gradient(135deg,#007bff,#00c6ff);
+            color:white;
+            text-decoration:none;
+            font-weight:500;
+            transition:0.3s;
+        }
+
+        a:hover{
+            transform:scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="success-box">
+    <h2>✅ Booking Confirmed!</h2>
+
+    <p><strong>Destination:</strong> {{ destination }}</p>
+    <p><strong>Travel Date:</strong> {{ travel_date }}</p>
+    <p><strong>Travelers:</strong> {{ travelers }}</p>
+
+    <a href="/">Go to Home</a>
+</div>
+
+</body>
+</html>

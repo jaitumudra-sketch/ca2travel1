@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Tour</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins', sans-serif;
+        }
+
+        body{
+            min-height:100vh;
+            background:linear-gradient(
+                rgba(0,0,0,0.6),
+                rgba(0,0,0,0.6)
+            ),
+            url("https://images.unsplash.com/photo-1501785888041-af3ef285b470");
+            background-size:cover;
+            background-position:center;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+        .booking-box{
+            background:#ffffff;
+            width:380px;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 15px 35px rgba(0,0,0,0.3);
+            animation:fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn{
+            from{opacity:0; transform:translateY(20px);}
+            to{opacity:1; transform:translateY(0);}
+        }
+
+        h2{
+            text-align:center;
+            margin-bottom:20px;
+            color:#333;
+        }
+
+        label{
+            font-size:14px;
+            font-weight:500;
+            color:#555;
+        }
+
+        input{
+            width:100%;
+            padding:10px 12px;
+            margin-top:6px;
+            margin-bottom:15px;
+            border-radius:8px;
+            border:1px solid #ccc;
+            outline:none;
+            transition:0.3s;
+        }
+
+        input:focus{
+            border-color:#007bff;
+            box-shadow:0 0 5px rgba(0,123,255,0.4);
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            border:none;
+            border-radius:30px;
+            background:linear-gradient(135deg,#007bff,#00c6ff);
+            color:white;
+            font-size:16px;
+            font-weight:600;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        button:hover{
+            transform:scale(1.05);
+            box-shadow:0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .note{
+            margin-top:15px;
+            text-align:center;
+            font-size:13px;
+            color:#777;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="booking-box">
+    <h2>🌍 Book Your Trip</h2>
+
+    <form method="POST" action="/booking">
+
+        <label>Destination</label>
+        <input type="text" name="destination" placeholder="Enter destination" required>
+
+        <label>Travel Date</label>
+        <input type="date" name="travel_date" required>
+
+        <label>Number of Travelers</label>
+        <input type="number" name="travelers" min="1" placeholder="e.g. 2" required>
+
+        <button type="submit">Book Now</button>
+
+    </form>
+
+    <div class="note">
+        Safe • Easy • Trusted Travel Booking
+    </div>
+</div>
+
+</body>
+</html>
